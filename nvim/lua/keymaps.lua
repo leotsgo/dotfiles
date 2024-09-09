@@ -66,9 +66,9 @@ vim.keymap.set(
 vim.keymap.set('n', '<C-Down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-Up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close current buffer' })
-vim.keymap.set('n', '<leader>Gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = 'Lazygit' })
-vim.keymap.set('n', '<leader>Gb', ':GitBlameToggle<CR>', { desc = 'Toggle Git Blame' })
-vim.keymap.set('n', '<leader>Gn', ':Neogit kind=auto<CR>', { desc = 'Open Neogit' })
+vim.keymap.set('n', '<leader>gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = 'Lazygit' })
+vim.keymap.set('n', '<leader>gb', ':GitBlameToggle<CR>', { desc = 'Toggle Git Blame' })
+vim.keymap.set('n', '<leader>gn', ':Neogit kind=auto<CR>', { desc = 'Open Neogit' })
 vim.keymap.set('n', '<leader>Gd', ':DiffviewOpen<CR>', { desc = 'Diff' })
 
 -- [[ Basic Autocommands ]]

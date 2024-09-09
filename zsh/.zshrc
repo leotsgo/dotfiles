@@ -28,6 +28,7 @@ export SCRIPTS="$HOME/scripts"
 
 # ~~~~~~~~~~~~~~~~ Plugin Manager ~~~~~~~~~~~~
 
+
 if [ ! -f $HOME/.local/share/zap/zap.zsh ]; then
   zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) -k --branch release-v1
 fi
@@ -75,14 +76,11 @@ source <($(which kubectl) completion zsh)
 
 autoload -Uz compinit
 compinit -u
-# Enable tab completion menu
-zstyle ':completion:*' menu select 
- # Enable tab completion based on what's already written
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' '+l:|=* r:|=*'
-plug "$HOME/.config/.zsh/aliases.zsh"
 
-# autoload edit command in vim
-autoload edit-command-line
+zstyle ':completion:*' menu select # Enable tab completion menu
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' '+l:|=* r:|=*' # Enable tab completion based on what's already written
+
+autoload edit-command-line # autoload edit command in vim
 zle -N edit-command-line
 bindkey "^e" edit-command-line
 bindkey '^H' backward-kill-word

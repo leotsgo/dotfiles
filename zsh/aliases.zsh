@@ -42,11 +42,11 @@ alias cat='bat'
 
 # Quick aliases to edit config files
 alias kconf='vim ~/.config/kitty/kitty.conf'
-alias zshrc='vim ~/.zshrc'
+alias zshrc='vim ~/dotfiles/zsh/.zshrc'
 alias asdfrc='vim ~/.asdfrc'
 alias awesomerc='vim ~/.config/awesome/rc.lua'
 alias qconf='vim ~/.config/qtile/config.py'
-alias aliases='vim ~/.config/.zsh/aliases.zsh'
+alias aliases='vim ~/dotfiles/zsh/aliases.zsh'
 
 # useful aliases
 alias vim="nvim"

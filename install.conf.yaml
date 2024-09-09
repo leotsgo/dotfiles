@@ -6,9 +6,10 @@
 - clean: ['~']
 
 - link:
-    ~/.config/nvim/: nvim/
+    ~/.config/nvim: nvim
     ~/.zshrc: zsh/.zshrc
     ~/.config/aliases.zsh: zsh/aliases.zsh
+    ~/.config/kitty: kitty
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

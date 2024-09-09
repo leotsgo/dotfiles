@@ -1,0 +1,21 @@
+#!/bin/bash
+# simplified version of https://github.com/mischavandenburg script
+
+today=$(date +"%Y%m%d")
+file=~/sb/journal/$(date +"%Y%m%d").md
+
+cd ~/sb/journal/ || exit
+
+new_note() {
+	touch "$file"
+}
+
+# If the daily note does not exist, create a new one.
+# this uses the test command with the -f flag.
+if [ ! -f "$file" ]; then
+	echo "File does not exist, creating new daily note."
+	new_note
+fi
+
+# Open the daily note at the bottom of the file in insert mode and run NoNeckPain to make it center
+nvim '+ normal Gzzo' "$file" 

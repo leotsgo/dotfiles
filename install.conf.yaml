@@ -12,6 +12,7 @@
     ~/.config/aliases.zsh: zsh/aliases.zsh
     ~/.config/kitty: kitty
     ~/.config/tmux: tmux
+    ~/scripts: scripts
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

@@ -1,0 +1,22 @@
+#!/bin/bash
+# simplified version of https://github.com/mischavandenburg script
+
+dir=~/sb/inbox/
+
+cd $dir || exit
+filename=$1
+
+# get_filename() {
+# 	read -p "Enter a filename: " filename
+# 	echo "$filename"
+# }
+
+new_note() {
+	touch "$filename.md"
+}
+
+echo $1.md
+# get_filename
+new_note
+
+nvim '+ normal Gzzo' "$filename.md"

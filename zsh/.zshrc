@@ -19,7 +19,6 @@ fi
 
 
 eval "$(~/.local/bin/mise activate zsh)"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export SUDO_EDITOR=nvim
 export EDITOR=nvim
 export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST

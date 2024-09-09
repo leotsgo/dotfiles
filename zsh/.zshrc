@@ -23,7 +23,6 @@ plug "zap-zsh/supercharge"
 plug "zdharma-continuum/fast-syntax-highlighting"
 plug "hlissner/zsh-autopair"
 plug "romkatv/powerlevel10k"
-
 # ZSH HISTORY
 HISTSIZE=100000000
 SAVEHIST=100000000
@@ -68,6 +67,7 @@ fpath+=$HOME/.config/.zsh/completions
 # The next line enables shell command completion for kubectl
 # source <(kubectl completion zsh)
 eval "$(mise hook-env)"
+source <(fzf --zsh)
 source <($(which kubectl) completion zsh)
 # initialise completions with ZSH's compinit
 autoload -Uz compinit && compinit

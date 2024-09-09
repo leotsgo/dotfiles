@@ -28,6 +28,9 @@ export SCRIPTS="$HOME/scripts"
 
 # ~~~~~~~~~~~~~~~~ Plugin Manager ~~~~~~~~~~~~
 
+if [ ! -f $HOME/.local/share/zap/zap.zsh ]; then
+  zsh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.zsh) -k --branch release-v1
+fi
 
 [ -f "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh" ] && source "${XDG_DATA_HOME:-$HOME/.local/share}/zap/zap.zsh"
 plug "zdharma-continuum/fast-syntax-highlighting"

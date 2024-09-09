@@ -8,6 +8,7 @@
 - link:
     ~/.config/nvim: nvim
     ~/.zshrc: zsh/.zshrc
+    ~/.config/.zsh/completions: zsh/commpletions
     ~/.config/aliases.zsh: zsh/aliases.zsh
     ~/.config/kitty: kitty
     ~/.config/tmux: tmux

@@ -26,8 +26,10 @@ plug "romkatv/powerlevel10k"
 # ZSH HISTORY
 HISTSIZE=100000000
 SAVEHIST=100000000
-setopt INC_APPEND_HISTORY
-setopt SHARE_HISTORY
+setopt INC_APPEND_HISTORY # new history lines are added to the $HISTFILE incrementally (as soon as they are entered)
+setopt HIST_IGNORE_SPACE  # Don't save when prefixed with space
+setopt HIST_IGNORE_DUPS   # Don't save duplicate lines
+setopt SHARE_HISTORY      # Share history between sessions
 HISTFILE=~/.config/.zsh/.zsh_history
 
 # exports and path stuff

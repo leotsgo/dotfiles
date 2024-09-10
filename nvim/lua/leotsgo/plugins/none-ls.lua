@@ -12,6 +12,11 @@ return {
       return
     end
 
+    local mason_ls_status_ok, mason_null_ls = pcall(require, 'mason-null-ls')
+    if not mason_ls_status_ok then
+      return
+    end
+
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
     local formatting = null_ls.builtins.formatting
     -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
@@ -51,6 +56,11 @@ return {
           })
         end
       end,
+    }
+
+    mason_null_ls.setup {
+      ensure_installed = nil,
+      automatic_installation = true,
     }
   end,
 }

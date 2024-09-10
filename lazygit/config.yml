@@ -1,0 +1,31 @@
+git:
+  branchLogCmd: "git log --graph --color=always --abbrev-commit --decorate --date=relative --pretty=medium --oneline {{branchName}} --"
+gui:
+  theme:
+    lightTheme: false 
+    showIcons: true
+    activeBorderColor:
+      - "#a6da95" # Green
+      - bold
+    inactiveBorderColor:
+      - "#cad3f5" # Text
+    optionsTextColor:
+      - "#8aadf4" # Blue
+    selectedLineBgColor:
+      - "#363a4f" # Surface0
+    selectedRangeBgColor:
+      - "#363a4f" # Surface0
+    cherryPickedCommitBgColor:
+      - "#8bd5ca" # Teal
+    cherryPickedCommitFgColor:
+      - "#8aadf4" # Blue
+    unstagedChangesColor:
+      - red       # Red
+notARepository: 'skip'
+customCommands:
+  - key: "C"
+    command: "git cz"
+    description: "commit with commitizen"
+    context: "files"
+    loadingText: "opening commitizen commit tool"
+    subprocess: true

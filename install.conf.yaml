@@ -14,6 +14,7 @@
     ~/.config/kitty: kitty
     ~/.config/tmux: tmux
     ~/scripts: scripts
+    ~/.config/lazygit: lazygit/config.yml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

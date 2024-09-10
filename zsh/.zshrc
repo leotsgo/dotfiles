@@ -8,12 +8,14 @@ fi
 export GPG_TTY=$(tty)
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-# ~~~~~~~~~~~~~~~~ p10k source ~~~~~~~~~~~~~~~
+# ~~~~~~~~~~~~~~~~ p10k sourcing ~~~~~~~~~~~~
 
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # ~~~~~~~~~~ Environment Variables ~~~~~~~~~~
 
@@ -89,8 +91,4 @@ bindkey '^H' backward-kill-word
 
 source <(fzf --zsh)
 source "$HOME/.config/.zsh/aliases.zsh"
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-
 

@@ -3,11 +3,11 @@
       relink: true
       force: true
 
-- clean: ['~']
+- clean: ["~"]
 
 - link:
     ~/.config/nvim: nvim
-    ~/.zshrc: zsh/.zshrc
+    ~/.zshrc: zsh/zshrc
     ~/.czrc: commitzen/czrc
     ~/.config/.zsh/completions: zsh/completions
     ~/.config/aliases.zsh: zsh/aliases.zsh
@@ -17,4 +17,4 @@
     ~/.config/lazygit: lazygit/config.yml
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [git submodule update --init --recursive, Installing submodules]

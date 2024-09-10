@@ -1,0 +1,4 @@
+/*npm install -g commitizen*/
+/*npm install -g cz-conventional-changelog*/
+/*npm install -g cz-emoji-conventional*/
+{ "path": "cz-emoji-conventional" }

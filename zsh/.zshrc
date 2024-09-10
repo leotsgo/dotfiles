@@ -74,6 +74,7 @@ export PATH
 fpath+=$HOME/.config/.zsh/completions
 eval "$(mise hook-env)"
 source <($(which kubectl) completion zsh)
+source <(devpod completion zsh)
 
 autoload -Uz compinit
 compinit -u

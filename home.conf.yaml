@@ -2,19 +2,25 @@
     link:
       relink: true
       force: true
+      create: true
 
 - clean: ["~"]
 
+- clean:
+    ~/.config/nvim/lua/leotsgo/plugins:
+      force: true
+
 - link:
     ~/.config/nvim: nvim
+    ~/.config/nvim/lua/leotsgo/plugins/colorscheme.lua: home/nvim/colorscheme.lua
     ~/.zshrc: zsh/zshrc
     ~/.czrc: commitzen/czrc
     ~/.config/.zsh/completions: zsh/completions
-    ~/.config/aliases.zsh: zsh/aliases.zsh
+    ~/.config/.zsh/aliases.zsh: zsh/aliases.zsh
     ~/.config/kitty: kitty
     ~/.config/tmux: tmux
     ~/scripts: scripts
-    ~/.config/lazygit: lazygit/config.yml
+    ~/.config/lazygit: lazygit
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

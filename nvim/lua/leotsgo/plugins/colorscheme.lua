@@ -1,1 +1,1 @@
-/home/leotsgo/dotfiles/home/nvim/colorscheme.lua
+/home/lbermejo/dotfiles/work/nvim/colorscheme.lua

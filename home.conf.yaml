@@ -6,10 +6,6 @@
 
 - clean: ["~"]
 
-- clean:
-    ~/.config/nvim/lua/leotsgo/plugins:
-      force: true
-
 - link:
     ~/.config/nvim: nvim
     ~/.config/nvim/lua/leotsgo/plugins/colorscheme.lua: home/nvim/colorscheme.lua

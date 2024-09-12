@@ -93,3 +93,6 @@ bindkey '^H' backward-kill-word
 source <(fzf --zsh)
 source "$HOME/.config/.zsh/aliases.zsh"
 
+# ~~~~~~~~~~~~~~~ Misc ~~~~~~~~~~~~~~~~~~
+# TODO: place dirmngr call on .profile
+dirmngr --daemon -q 2>&1 >> /dev/null

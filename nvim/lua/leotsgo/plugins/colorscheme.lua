@@ -1,1 +1,0 @@
-/home/lbermejo/dotfiles/work/nvim/colorscheme.lua

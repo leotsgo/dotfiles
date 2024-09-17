@@ -2,9 +2,9 @@
 # simplified version of https://github.com/mischavandenburg script
 
 today=$(date +"%Y%m%d")
-file=~/sb/journal/$(date +"%Y%m%d").md
+file=$JOURNAL/$(date +"%Y%m%d").md
 
-cd ~/sb/journal/ || exit
+cd "$JOURNAL" || exit
 
 new_note() {
 	touch "$file"
@@ -18,4 +18,4 @@ if [ ! -f "$file" ]; then
 fi
 
 # Open the daily note at the bottom of the file in insert mode and run NoNeckPain to make it center
-nvim '+ normal Gzzo' "$file" 
+nvim '+ normal Gzzo' "$file"

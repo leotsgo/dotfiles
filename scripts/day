@@ -2,7 +2,7 @@
 # simplified version of https://github.com/mischavandenburg script
 
 today=$(date +"%Y%m%d")
-file=$JOURNAL/$(date +"%Y%m%d").md
+file=$JOURNAL/$(date +"%Y-%m-%d").md
 
 cd "$JOURNAL" || exit
 

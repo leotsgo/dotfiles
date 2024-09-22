@@ -26,7 +26,10 @@ export EDITOR=nvim
 export ZSH_COMPDUMP=~/.cache/.zcompdump-$HOST
 export GOPATH="$HOME/go"
 export SCRIPTS="$HOME/scripts"
-export JOURNAL="$HOME/sb/3 journal"
+export DOTFILES="$HOME/dotfiles"
+export NOTES="$HOME/sb"
+export INBOX="$NOTES/0 inbox"
+export JOURNAL="$NOTES/3 journal"
 
 # ~~~~~~~~~~~~~~~~ Plugin Manager ~~~~~~~~~~~~
 

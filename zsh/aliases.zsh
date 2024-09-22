@@ -40,61 +40,32 @@ alias ls='eza --icons'
 alias l.='eza -d .* --icons'
 alias cat='bat'
 
-# Quick aliases to edit config files
+# Aliases to move around faster
 alias kconf='vim ~/.config/kitty/kitty.conf'
-alias zshrc='vim ~/dotfiles/zsh/.zshrc'
-alias asdfrc='vim ~/.asdfrc'
-alias awesomerc='vim ~/.config/awesome/rc.lua'
-alias qconf='vim ~/.config/qtile/config.py'
+alias zshrc='vim $DOTFILES/zsh/zshrc'
 alias aliases='vim ~/dotfiles/zsh/aliases.zsh'
+alias scripts="cd $SCRIPTS"
+alias dotfiles="cd $DOTFILES"
+alias sb="cd $NOTES"
 
 # useful aliases
 alias vim="nvim"
 alias nv="nvim"
 alias v="nvim"
 alias k="kubectl"
+
+# nvim update with asdf
 alias update-nvim-stable='asdf uninstall neovim stable && asdf install neovim stable'
 alias update-nvim-nightly='asdf uninstall neovim nightly && asdf install neovim nightly'
 alias update-nvim-master='asdf uninstall neovim ref:master && asdf install neovim ref:master'
+
+# update p10k
 alias p10k-update='git -C ~/.config/.zsh/powerlevel10k pull'
-alias resource='echo Reshiming and resourcing... && asdf reshim && source ~/.zshrc && echo Done!'
+
 alias grep='grep --color=auto'
 alias lg='lazygit'
-alias z='zellij'
-alias zc='zellij -l compact'
-alias zjs='zj-sessionizer'
-function zr () { zellij run --name "$*" -- zsh -ic "$*";}
-function zrf () { zellij run --name "$*" --floating -- zsh -ic "$*";}
-function ze () { zellij edit "$*";}
-function zef () { zellij edit --floating "$*";}
-alias pvpn='protonvpn-cli'
 alias t='tmux'
 
-# yadm
-function yl() {
-  local dir="$(pwd)"
-  cd ~
-  yadm enter lazygit
-  cd $dir
-}
-
-# pull and push notes to my obsidian repo
-function pushnotes() {
-  local dir="$(pwd)"
-  cd $HOME/notes 
-  git add --all && git commit -m "$(date)"
-  git push
-  cd $dir
-}
-
-function pullnotes() {
-  local dir="$(pwd)"
-  cd $HOME/notes
-  git pull
-  cd $dir
-}
-
-# cleans zcompdump files
 function clearzcompdump() {
   local dir="$(pwd)"
   cd $HOME

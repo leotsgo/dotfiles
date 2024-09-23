@@ -47,6 +47,7 @@ alias aliases='vim ~/dotfiles/zsh/aliases.zsh'
 alias scripts="cd $SCRIPTS"
 alias dotfiles="cd $DOTFILES"
 alias sb="cd $NOTES"
+alias work="cd $WORK"
 
 # useful aliases
 alias vim="nvim"

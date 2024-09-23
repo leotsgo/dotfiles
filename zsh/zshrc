@@ -30,6 +30,7 @@ export DOTFILES="$HOME/dotfiles"
 export NOTES="$HOME/sb"
 export INBOX="$NOTES/0 inbox"
 export JOURNAL="$NOTES/3 journal"
+export WORK="$HOME/work"
 
 # ~~~~~~~~~~~~~~~~ Plugin Manager ~~~~~~~~~~~~
 

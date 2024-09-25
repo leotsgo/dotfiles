@@ -3,20 +3,7 @@
 
 dir=$INBOX
 
-cd $dir || exit
+cd "$dir" || exit
 filename=$1
 
-# get_filename() {
-# 	read -p "Enter a filename: " filename
-# 	echo "$filename"
-# }
-
-new_note() {
-	touch "$filename.md"
-}
-
-echo $1.md
-# get_filename
-new_note
-
-nvim '+ normal Gzzo' "$filename.md"
+nvim '+ normal Gzz' "$filename.md" -c :NoNeckPain

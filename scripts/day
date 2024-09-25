@@ -17,5 +17,5 @@ if [ ! -f "$file" ]; then
 	new_note
 fi
 
-# Open the daily note at the bottom of the file in insert mode and run NoNeckPain to make it center
-nvim '+ normal Gzzo' "$file"
+# Open the daily note at the bottom of the file and run No Neck Pain
+nvim '+ normal Gzz' "$file" -c :NoNeckPain

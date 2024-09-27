@@ -12,6 +12,7 @@
     ~/.czrc: commitzen/czrc
     ~/.config/.zsh/completions: zsh/completions
     ~/.config/.zsh/aliases.zsh: zsh/aliases.zsh
+    ~/.config/.zsh/variables.zsh: work/zsh/variables.zsh
     ~/.config/kitty: kitty
     ~/.config/tmux: tmux
     ~/scripts: scripts

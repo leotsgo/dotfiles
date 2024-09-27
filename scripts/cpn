@@ -2,6 +2,7 @@
 
 # commit and push notes
 cd $HOME/sb
+git pull
 git add --all
 git commit -m "manual backup: $(date '+%Y-%m-%d %H:%M:%S')"
 git push

@@ -13,6 +13,7 @@
     ~/.config/.zsh/completions: zsh/completions
     ~/.config/.zsh/aliases.zsh: zsh/aliases.zsh
     ~/.config/.zsh/variables.zsh: work/zsh/variables.zsh
+    ~/.gitconfig: work/.gitconfig
     ~/.config/kitty: kitty
     ~/.config/tmux: tmux
     ~/scripts: scripts

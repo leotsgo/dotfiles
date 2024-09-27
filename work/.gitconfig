@@ -1,0 +1,10 @@
+[user]
+	name = Leonardo Diniz Bermejo
+	email = lbermejo@pagbank.com
+	signingkey = D5A833AFF9DFA30B!
+[alias]
+	s = !git status -s
+	l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(green)%cn, %C(cyan)%cr'
+[commit]
+	gpgsign = true
+

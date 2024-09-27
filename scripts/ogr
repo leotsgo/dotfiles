@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# This script checks if we are in a git repository and if we are, open the remote in browser.
+# It assumes there is only a single remote and will use Google Chrome if the variable $BROWSER is not set.
+# It is compatible with Google Chrome's and Firefox --new-tab syntax.
+
+if [[ -z "$BROWSER" ]]; then BROWSER="google-chrome"; fi
+
+is_inside_git_repo() {
+	git rev-parse --is-inside-work-tree >/dev/null 2>&1
+}
+
+get_repo_url() {
+	REMOTE="$(git remote -v | awk '/fetch/ {print $2; exit}')"
+
+	if [[ "$REMOTE" =~ ^http* ]]; then
+		echo $REMOTE
+	else
+		echo "$REMOTE" | sed -E 's/git@(.*):(.+)\.git/\1\/\2/'
+	fi
+
+}
+
+if ! is_inside_git_repo; then
+	echo "Not a git repository"
+	exit 1
+fi
+
+$BROWSER --new-tab "$(get_repo_url)" >/dev/null 2>&1

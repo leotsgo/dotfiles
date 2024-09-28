@@ -1,2 +1,2 @@
 # export home environment variables
-export BROWSER='firefox'
+export BROWSER='qutebrowser'

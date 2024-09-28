@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 # This script checks if we are in a git repository and if we are, open the remote in browser.
 # It assumes there is only a single remote and will use Google Chrome if the variable $BROWSER is not set.
 # It is compatible with Google Chrome's and Firefox --new-tab syntax.
@@ -25,4 +25,10 @@ if ! is_inside_git_repo; then
 	exit 1
 fi
 
-$BROWSER --new-tab "$(get_repo_url)" >/dev/null 2>&1
+if [[ "$BROWSER" == "qutebrowser" ]]; then
+	COMMAND=""
+else
+	COMMAND="--new-tab"
+fi
+
+$BROWSER $COMMAND "$(get_repo_url)" >/dev/null 2>&1

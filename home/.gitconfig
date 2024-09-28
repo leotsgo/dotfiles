@@ -1,0 +1,12 @@
+[user]
+	name = Leonardo Diniz Bermejo
+	signingkey = 2A497A96C137EC1A!
+	email = me@leotsgo.dev
+[commit]
+	gpgsign = true
+[credential]
+	helper = store
+[alias]
+	s = !git status -s
+	l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(green)%cn, %C(cyan)%cr'
+

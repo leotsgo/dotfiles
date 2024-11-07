@@ -77,13 +77,13 @@ export PATH
 # ~~~~~~~~~~~~~~~ Completions ~~~~~~~~~~~~~~
 
 
+autoload -Uz compinit
+compinit -u
+
 fpath+=$HOME/.config/.zsh/completions
 eval "$(mise hook-env)"
 source <($(which kubectl) completion zsh)
 source <(devpod completion zsh)
-
-autoload -Uz compinit
-compinit -u
 
 zstyle ':completion:*' menu select # Enable tab completion menu
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' '+l:|=* r:|=*' # Enable tab completion based on what's already written

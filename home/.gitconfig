@@ -8,5 +8,5 @@
 	helper = store
 [alias]
 	s = !git status -s
-	l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(green)%cn, %C(cyan)%cr'
+	l = !git log --pretty=format:'%C(blue)%h%C(red)%d %C(white)%s - %C(green)%cn %C(magenta)<%ae>, %C(cyan)%cr'
 

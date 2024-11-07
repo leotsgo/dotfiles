@@ -65,6 +65,7 @@ vim.keymap.set(
 )
 vim.keymap.set('n', '<C-Down>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-Up>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
+vim.keymap.set('n', '<S-Up>', '<S-j>', { desc = 'Move line up' })
 vim.keymap.set('n', '<S-q>', '<cmd>bdelete!<CR>', { desc = 'Close current buffer' })
 vim.keymap.set('n', '<leader>gg', '<cmd>lua _LAZYGIT_TOGGLE()<CR>', { desc = 'Lazygit' })
 vim.keymap.set('n', '<leader>gb', ':GitBlameToggle<CR>', { desc = 'Toggle Git Blame' })

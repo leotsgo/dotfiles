@@ -62,4 +62,6 @@ vim.opt.scrolloff = 10
 vim.opt.cmdheight = 0
 
 vim.opt.conceallevel = 1
+vim.opt.laststatus = 3
+
 -- vim: ts=2 sts=2 sw=2 et

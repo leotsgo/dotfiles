@@ -72,6 +72,9 @@ vim.keymap.set('n', '<leader>gb', ':GitBlameToggle<CR>', { desc = 'Toggle Git Bl
 vim.keymap.set('n', '<leader>gn', ':Neogit kind=auto<CR>', { desc = 'Open Neogit' })
 vim.keymap.set('n', '<leader>Gd', ':DiffviewOpen<CR>', { desc = 'Diff' })
 
+-- Enables Ctrl+Backspace in insert mode
+vim.keymap.set('i', '<C-H>', '<C-W>')
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 

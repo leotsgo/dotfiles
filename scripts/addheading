@@ -1,0 +1,17 @@
+#!/bin/bash
+
+for file in *.md; do
+	# Check if the first line starts with '# '
+	first_line=$(head -n 1 "$file")
+	if [[ $first_line == "# "* ]]; then
+		echo "Skipping $file (already has a heading)"
+		continue
+	fi
+
+	# Extract the filename without the extension
+	filename=$(basename "$file" .md)
+
+	# Insert the heading as the first line
+	sed -i "1i # $filename\n" "$file"
+	echo "Updated $file with heading '# $filename'"
+done

@@ -17,7 +17,7 @@ echo "${1}"
 FILE_SUFFIX="${1}"
 
 cd "${BASEDIR}"
-# git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
-# git submodule update --init --recursive "${DOTBOT_DIR}"
+git -C "${DOTBOT_DIR}" submodule sync --quiet --recursive
+git submodule update --init --recursive "${DOTBOT_DIR}"
 
 "${BASEDIR}/${DOTBOT_DIR}/${DOTBOT_BIN}" -d "${BASEDIR}" -c "${FILE_SUFFIX}${FILE_PREFIX}"

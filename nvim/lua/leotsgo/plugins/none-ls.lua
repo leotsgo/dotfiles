@@ -38,7 +38,7 @@ return {
         -- formatting.clang_format,
         -- formatting.terraform_fmt,
 
-        require 'none-ls.diagnostics.eslint_d',
+        -- require 'none-ls.diagnostics.eslint_d',
         require 'none-ls.diagnostics.flake8',
 
         -- diagnostics.golangci_lint,

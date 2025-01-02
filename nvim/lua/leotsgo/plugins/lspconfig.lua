@@ -72,7 +72,6 @@ return {
         clangd = {},
         gopls = {},
         pyright = {},
-        -- tsserver = {},
 
         lua_ls = {
           settings = {
@@ -100,6 +99,8 @@ return {
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
+        ensure_installed = { 'lua_ls', 'eslint', 'gopls', 'ts_ls' },
+        automatic_installation = true,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}

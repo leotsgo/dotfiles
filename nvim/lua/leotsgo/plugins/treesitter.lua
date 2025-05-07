@@ -3,7 +3,7 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     dependencies = {
-      { 'hiphish/rainbow-delimiters.nvim' },
+      { 'HiPhish/rainbow-delimiters.nvim' },
     },
     config = function()
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`

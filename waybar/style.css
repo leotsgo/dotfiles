@@ -66,6 +66,7 @@ button:hover {
 #tray,
 #network,
 #mode,
+#bluetooth,
 #scratchpad {
   margin-top: 2px;
   margin-bottom: 2px;
@@ -73,6 +74,11 @@ button:hover {
   margin-right: 4px;
   padding-left: 4px;
   padding-right: 4px;
+}
+
+#bluetooth {
+  color: @blue;
+  border-bottom: 2px solid @blue;
 }
 
 #clock {
@@ -107,6 +113,12 @@ button:hover {
 #battery {
   color: @green;
   border-bottom: 2px solid @green;
+}
+
+.ws-occupied {
+  color: @lavender;
+  font-weight: bold;
+  border-top: 2px solid @lavender;
 }
 
 /* If workspaces is the leftmost module, omit left margin */

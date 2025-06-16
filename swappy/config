@@ -2,11 +2,11 @@
 save_dir=$HOME/Pictures/Screenshots/
 save_filename_format=swappy-%Y-%m-%d_%H%M%S.png
 show_panel=false
-line_size=5
+line_size=3
 text_size=20
 text_font=sans-serif
-paint_mode=brush
-early_exit=false
+paint_mode=rectangle
+early_exit=true
 fill_shape=false
-auto_save=false
+auto_save=true
 custom_color=rgba(193,125,17,1)

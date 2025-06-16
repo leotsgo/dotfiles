@@ -23,6 +23,7 @@
     ~/.config/waybar: waybar
     ~/.config/wofi: wofi
     ~/.XCompose: xcompose/.XCompose
+    ~/.config/swappy/config: swappy/config
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

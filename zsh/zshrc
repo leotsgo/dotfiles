@@ -32,6 +32,7 @@ export INBOX="$NOTES/0 inbox"
 export JOURNAL="$NOTES/3 journal"
 export WORK="$HOME/work"
 source $HOME/.config/.zsh/variables.zsh
+source $HOME/.config/.zsh/z.sh
 
 # ~~~~~~~~~~~~~~~~ Plugin Manager ~~~~~~~~~~~~
 
@@ -102,3 +103,6 @@ source "$HOME/.config/.zsh/aliases.zsh"
 # ~~~~~~~~~~~~~~~ Misc ~~~~~~~~~~~~~~~~~~
 # TODO: place dirmngr call on .profile
 dirmngr --daemon -q 2>&1 >> /dev/null
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"

@@ -67,6 +67,11 @@ alias grep='grep --color=auto'
 alias lg='lazygit'
 alias t='tmux'
 
+# pomodoro
+alias p='pomodoro'
+alias pb='pomodoro break'
+alias pbt='pomodoro break 10'
+
 function clearzcompdump() {
   local dir="$(pwd)"
   cd $HOME

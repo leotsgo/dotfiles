@@ -1,6 +1,6 @@
 #!/bin/bash
 
-options="Shutdown\nReboot\nLock\nLogout"
+options="Shutdown\nReboot\nLock\nLogout\nSuspend"
 chosen=$(echo -e "$options" | wofi --dmenu --prompt "Power")
 
 case "$chosen" in
@@ -8,4 +8,5 @@ Shutdown) systemctl poweroff ;;
 Reboot) systemctl reboot ;;
 Lock) hyprlock ;;                # or replace with your lock program
 Logout) hyprctl dispatch exit ;; # or `swaymsg exit` for sway
+Suspend) systemctl suspend ;;
 esac

@@ -17,6 +17,7 @@
     ~/.gitconfig: home/.gitconfig
     ~/.config/kitty: kitty
     ~/.config/tmux: tmux
+    ~/.config/uair: uair
     ~/scripts: scripts
     ~/.config/lazygit: lazygit
     ~/.config/hypr: hypr
@@ -24,6 +25,7 @@
     ~/.config/wofi: wofi
     ~/.XCompose: xcompose/.XCompose
     ~/.config/swappy/config: swappy/config
+    ~/.pomodoro/settings: pomodoro/settings
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]

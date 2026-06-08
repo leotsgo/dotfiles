@@ -1,0 +1,25 @@
+# uair pomodoro — ~/.config/uair/uair.toml
+# Timer starts PAUSED (you sit down, then start it).
+# Control: tmux prefix+u = toggle (start/pause), prefix+U = skip session.
+# After the first start, sessions auto-advance (work -> break -> work ...).
+
+loop_on_end = true
+pause_at_start = true
+
+[defaults]
+time_format = "%M:%S"
+paused_state_text = " ⏸"
+resumed_state_text = ""
+
+[[sessions]]
+name = "Work"
+duration = "25m"
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' 'Work done — take a break!'; pw-play $HOME/.config/uair/bell.wav"
+format = "🍅 {name}: {time}{state}"
+
+[[sessions]]
+name = "Break"
+duration = "5m"
+autostart = true
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair ☕' 'Break over — back to it!'; pw-play $HOME/.config/uair/bell.wav"
+format = "☕ {name}: {time}{state}"

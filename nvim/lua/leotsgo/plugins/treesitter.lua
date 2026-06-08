@@ -1,6 +1,7 @@
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
+    branch = 'master', -- pin to classic API (main branch is a rewrite; see :h nvim-treesitter)
     build = ':TSUpdate',
     dependencies = {
       { 'HiPhish/rainbow-delimiters.nvim' },

@@ -15,6 +15,11 @@ input {
     touchpad { tap; natural-scroll; }
 }
 
+cursor {
+    xcursor-theme "Bibata-Modern-Ice"
+    xcursor-size 24
+}
+
 // Outputs left to niri's auto-handling (preferred mode, auto-arrange).
 // eDP follows the lid: closed -> off (HDMI only), open -> on (HDMI + laptop).
 switch-events {

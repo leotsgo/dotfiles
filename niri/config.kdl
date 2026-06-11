@@ -34,6 +34,13 @@ layout {
     focus-ring { width 2; }
 }
 
+animations {
+    // instant workspace switching (no slide)
+    workspace-switch {
+        off
+    }
+}
+
 hotkey-overlay { skip-at-startup; }
 
 // Rounded corners on all windows. clip-to-geometry is required, or only the

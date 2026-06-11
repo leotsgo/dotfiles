@@ -69,6 +69,7 @@ path=(
   $HOME/.local/bin
   /usr/bin
   $HOME/go/bin
+  /home/leotsgo/.bun/bin
 )
 
 typeset -U path

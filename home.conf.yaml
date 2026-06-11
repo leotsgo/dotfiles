@@ -21,6 +21,7 @@
     ~/scripts: scripts
     ~/.config/lazygit: lazygit
     ~/.config/hypr: hypr
+    ~/.config/niri: niri
     ~/.config/waybar: waybar
     ~/.config/wofi: wofi
     ~/.XCompose: xcompose/.XCompose

@@ -1,25 +1,54 @@
-# uair pomodoro — ~/.config/uair/uair.toml
-# Timer starts PAUSED (you sit down, then start it).
-# Control: tmux prefix+u = toggle (start/pause), prefix+U = skip session.
-# After the first start, sessions auto-advance (work -> break -> work ...).
+# uair — focus timers (10/20/30/60/90 min). No auto-break cycle.
+# Control: wofi menu (wofi-pomodoro.sh) or tmux (prefix+u toggle).
+# Starts PAUSED; pick a duration -> the script does `uairctl jump <id>; resume`.
+# Each session, on finish: pause music + notify + ring the bell.
 
-loop_on_end = true
+loop_on_end = false
 pause_at_start = true
 
 [defaults]
-time_format = "%M:%S"
+time_format = "%*H:%M:%S"  # show hours only when non-zero (60/90m sessions)
 paused_state_text = " ⏸"
 resumed_state_text = ""
 
 [[sessions]]
-name = "Work"
-duration = "25m"
-command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' 'Work done — take a break!'; pw-play $HOME/.config/uair/bell.wav"
-format = "🍅 {name}: {time}{state}"
+id = "s5"
+name = "5m"
+duration = "5m"
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' '5 min — done!'; pw-play $HOME/.config/uair/bell.wav"
+format = "🍅 {name} {time}{state}"
 
 [[sessions]]
-name = "Break"
-duration = "5m"
-autostart = true
-command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair ☕' 'Break over — back to it!'; pw-play $HOME/.config/uair/bell.wav"
-format = "☕ {name}: {time}{state}"
+id = "s10"
+name = "10m"
+duration = "10m"
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' '10 min — done!'; pw-play $HOME/.config/uair/bell.wav"
+format = "🍅 {name} {time}{state}"
+
+[[sessions]]
+id = "s20"
+name = "20m"
+duration = "20m"
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' '20 min — done!'; pw-play $HOME/.config/uair/bell.wav"
+format = "🍅 {name} {time}{state}"
+
+[[sessions]]
+id = "s30"
+name = "30m"
+duration = "30m"
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' '30 min — done!'; pw-play $HOME/.config/uair/bell.wav"
+format = "🍅 {name} {time}{state}"
+
+[[sessions]]
+id = "s60"
+name = "60m"
+duration = "60m"
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' '60 min — done!'; pw-play $HOME/.config/uair/bell.wav"
+format = "🍅 {name} {time}{state}"
+
+[[sessions]]
+id = "s90"
+name = "90m"
+duration = "90m"
+command = "playerctl --all-players pause 2>/dev/null; notify-send -u normal 'uair 🍅' '90 min — done!'; pw-play $HOME/.config/uair/bell.wav"
+format = "🍅 {name} {time}{state}"

@@ -10,6 +10,7 @@
     ~/.config/nvim: nvim
     ~/.config/nvim/lua/leotsgo/plugins/colorscheme.lua: home/nvim/colorscheme.lua
     ~/.zshrc: zsh/zshrc
+    ~/.p10k.zsh: zsh/p10k.zsh
     ~/.czrc: commitzen/czrc
     ~/.config/.zsh/completions: zsh/completions
     ~/.config/.zsh/aliases.zsh: zsh/aliases.zsh

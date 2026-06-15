@@ -67,6 +67,11 @@ alias grep='grep --color=auto'
 alias lg='lazygit'
 alias t='tmux'
 
+# Hermes agent (runs on hephaestus as the hermes user; -t for a TTY)
+alias hermes='ssh -t hephaestus /home/leotsgo/.local/bin/hermes-tui'
+alias hermes-cli='ssh -t hephaestus /home/leotsgo/.local/bin/hermes-cli'
+alias hermes-resume='ssh -t hephaestus /home/leotsgo/.local/bin/hermes-resume'
+
 # pomodoro
 alias p='pomodoro'
 alias pb='pomodoro break'

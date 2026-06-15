@@ -1,0 +1,21 @@
+# ~/.zshenv — sourced by EVERY zsh invocation, including NON-interactive ones
+# (ssh commands, scripts, and the Hermes agent reaching this machine via `ssh laptop`).
+# .zshrc only runs for interactive shells, so PATH lives here to be available everywhere.
+#
+# mise shims expose version-managed tools (node/kubectl/bun/krew/...) without needing
+# `mise activate` (which only runs in interactive .zshrc). Interactive shells still get
+# full mise behaviour on top of this.
+
+export GOPATH="$HOME/go"
+
+typeset -U path PATH
+path=(
+  $HOME/.local/share/mise/shims
+  $HOME/.krew/bin
+  $HOME/scripts
+  $HOME/.local/bin
+  $HOME/go/bin
+  $HOME/.bun/bin
+  $path
+)
+export PATH

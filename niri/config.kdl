@@ -8,8 +8,9 @@ prefer-no-csd
 input {
     keyboard {
         xkb {
-            layout "us"
-            variant "intl"
+            layout "us,br"
+            variant "intl,abnt2"
+            options "grp:win_space_toggle"
         }
     }
     touchpad { tap; natural-scroll; }
@@ -82,6 +83,7 @@ spawn-at-startup "xwayland-satellite" ":0"
 spawn-at-startup "qs" "-c" "noctalia-shell"  // Noctalia = a Quickshell config (/etc/xdg/quickshell/noctalia-shell)
 spawn-at-startup "hypridle"
 spawn-at-startup "hyprsunset"
+spawn-at-startup "fcitx5"
 
 binds {
     // ── apps / menus ──

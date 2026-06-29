@@ -1,4 +1,3 @@
-// ~/.config/niri/config.kdl — translated from the Hyprland binds.
 // MODEL: niri is scrollable-tiling. Left/Right = between COLUMNS,
 // Up/Down = between windows stacked IN a column. Workspaces are a vertical strip.
 // Validate after edits:  niri validate
@@ -76,10 +75,6 @@ window-rule {
     open-on-workspace "comms"
 }
 
-// X11 apps: niri has no built-in XWayland — xwayland-satellite provides it.
-environment { DISPLAY ":0"; }
-
-spawn-at-startup "xwayland-satellite" ":0"
 spawn-at-startup "qs" "-c" "noctalia-shell"  // Noctalia = a Quickshell config (/etc/xdg/quickshell/noctalia-shell)
 spawn-at-startup "hypridle"
 spawn-at-startup "hyprsunset"

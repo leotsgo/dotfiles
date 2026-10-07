@@ -1,0 +1,3 @@
+# Encrypt secrets at rest (git-crypt). Working tree stays plaintext.
+# Fresh clones need: git-crypt unlock <key>
+zsh/zshenv filter=git-crypt diff=git-crypt

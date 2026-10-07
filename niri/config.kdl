@@ -70,12 +70,26 @@ window-rule {
     match app-id=r#"^vesktop$"#
     open-on-workspace "comms"
 }
+
 window-rule {
-    match app-id=r#"^obsidian$"#
+    match app-id=r#"^md.obsidian.Obsidian$"#
+    draw-border-with-background false
+    opacity 0.85
     open-on-workspace "comms"
 }
 
-spawn-at-startup "qs" "-c" "noctalia-shell"  // Noctalia = a Quickshell config (/etc/xdg/quickshell/noctalia-shell)
+window-rule {
+    match app-id="kitty"
+    draw-border-with-background false
+}
+
+window-rule {
+    match app-id=r#"^code$"#
+    draw-border-with-background false
+}
+
+
+spawn-at-startup "noctalia"  // Noctalia = a Quickshell config (/etc/xdg/quickshell/noctalia-shell)
 spawn-at-startup "hypridle"
 spawn-at-startup "hyprsunset"
 spawn-at-startup "fcitx5"
@@ -84,7 +98,7 @@ binds {
     // ── apps / menus ──
     Mod+T { spawn "kitty"; }
     Mod+E { spawn "nautilus"; }
-    Mod+A { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "launcher" "toggle"; }   // verify: qs -c noctalia-shell ipc show
+    Mod+A { spawn-sh "noctalia msg panel-toggle launcher"; }   // verify: qs -c noctalia-shell ipc show
     Mod+W { spawn "/home/leotsgo/scripts/wifimenu"; }
     Mod+B { spawn "/home/leotsgo/scripts/bluetoothmenu"; }
     Mod+Shift+P { spawn "/home/leotsgo/scripts/powermenu"; }
@@ -149,3 +163,5 @@ binds {
     Mod+Shift+Left  { move-column-left; }
     Mod+Shift+Right { move-column-right; }
 }
+
+include "noctalia.kdl"

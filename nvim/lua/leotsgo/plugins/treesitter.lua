@@ -1,39 +1,43 @@
 return {
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
-    branch = 'master', -- pin to classic API (main branch is a rewrite; see :h nvim-treesitter)
+    branch = 'main', -- rewrite: required on Neovim 0.12+ (master is locked to 0.11)
+    lazy = false, -- main does not support lazy-loading
     build = ':TSUpdate',
     dependencies = {
       { 'HiPhish/rainbow-delimiters.nvim' },
     },
     config = function()
       -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
-
-      ---@diagnostic disable-next-line: missing-fields
-      require('nvim-treesitter.configs').setup {
-        ensure_installed = {
-          'bash',
-          'c',
-          'html',
-          'lua',
-          'markdown',
-          'markdown_inline',
-          'vim',
-          'vimdoc',
-          'yaml',
-          'json',
-          'javascript',
-          'typescript',
-          'python',
-          'elixir',
-          'heex',
-          'eex',
-        },
-        -- Autoinstall languages that are not installed
-        auto_install = true,
-        highlight = { enable = true },
-        indent = { enable = true },
+      -- Parsers install into stdpath('data')/site. Needs `tree-sitter-cli` >= 0.26.1.
+      require('nvim-treesitter').install {
+        'bash',
+        'c',
+        'html',
+        'lua',
+        'markdown',
+        'markdown_inline',
+        'vim',
+        'vimdoc',
+        'yaml',
+        'json',
+        'javascript',
+        'typescript',
+        'python',
+        'elixir',
+        'heex',
+        'eex',
       }
+
+      -- Highlighting/indentation are provided by Neovim core since 0.12.
+      vim.api.nvim_create_autocmd('FileType', {
+        callback = function()
+          if pcall(vim.treesitter.start) then
+            vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
+      })
+
       local rainbow_delimiters = require 'rainbow-delimiters'
 
       vim.g.rainbow_delimiters = {

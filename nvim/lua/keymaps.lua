@@ -32,7 +32,7 @@ vim.keymap.set(
 )
 
 -- TODO: organize it later
-vim.keymap.set('n', '<leader>f', vim.lsp.buf.format, { desc = 'Format buffer' })
+-- <leader>f (format) is registered by conform.nvim in leotsgo/plugins/conform.lua
 vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 vim.keymap.set('n', '<S-Right>', ':bnext<CR>')
 vim.keymap.set('n', '<S-Left>', ':bprevious<CR>')

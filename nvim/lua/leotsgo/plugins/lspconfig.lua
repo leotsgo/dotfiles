@@ -69,10 +69,10 @@ return {
 
       require('mason').setup()
       require('mason-tool-installer').setup {
-        ensure_installed = { 'stylua' }, -- format lua
+        ensure_installed = { 'stylua', 'black', 'golines', 'prettierd', 'shfmt', 'flake8' },
       }
       require('mason-lspconfig').setup {
-        ensure_installed = { 'lua_ls', 'gopls', 'pyright', 'clangd', 'ts_ls', 'eslint' },
+        ensure_installed = { 'lua_ls', 'gopls', 'pyright', 'clangd', 'ts_ls', 'eslint', 'elixirls' },
         automatic_enable = true, -- enables installed servers via vim.lsp.enable
       }
     end,

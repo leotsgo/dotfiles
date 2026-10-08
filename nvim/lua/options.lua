@@ -66,4 +66,8 @@ vim.opt.laststatus = 3
 
 vim.g.editorconfig = false
 
+-- Neovim 0.12 defaults diagnostics to virtual_text = false (signs/underline only).
+-- Show the message inline and sort by severity.
+vim.diagnostic.config { virtual_text = true, severity_sort = true }
+
 -- vim: ts=2 sts=2 sw=2 et

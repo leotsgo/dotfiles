@@ -18,7 +18,6 @@
     ~/.config/.zsh/variables.zsh: home/zsh/variables.zsh
     ~/.gitconfig: home/.gitconfig
     ~/.config/kitty: kitty
-    ~/.config/tmux: tmux
     ~/.config/uair: uair
     ~/scripts: scripts
     ~/.config/lazygit: lazygit

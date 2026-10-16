@@ -65,7 +65,6 @@ alias p10k-update='git -C ~/.config/.zsh/powerlevel10k pull'
 
 alias grep='grep --color=auto'
 alias lg='lazygit'
-alias t='tmux'
 
 # Hermes agent (runs on hephaestus as the hermes user; -t for a TTY)
 alias hermes='ssh -t hephaestus /home/leotsgo/.local/bin/hermes-tui'

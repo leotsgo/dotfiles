@@ -15,7 +15,6 @@
     ~/.config/.zsh/variables.zsh: work/zsh/variables.zsh
     ~/.gitconfig: work/.gitconfig
     ~/.config/kitty: kitty
-    ~/.config/tmux: tmux
     ~/scripts: scripts
     ~/.config/lazygit: lazygit
 

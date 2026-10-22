@@ -22,7 +22,7 @@ wl-paste -t image/png > "$tmp" 2>/dev/null
 # socket: own env first, else newest live socket — a kitty restarted from a
 # window of the OLD kitty inherits the dead instance's KITTY_LISTEN_ON and
 # passes it to children. kitty-mux-restore launches cleaned, this is the belt.
-so="$KITTY_LISTEN_ON"
+so="${KITTY_LISTEN_ON:-}"
 [ -S "${so#unix:}" ] || so="unix:$(find /tmp -maxdepth 1 -type s -name 'kitty-*' -printf '%T@ %p\n' 2>/dev/null | sort -rn | head -1 | cut -d' ' -f2-)"
 
 out="$(kitten @ --to "$so" ls 2>/dev/null | python3 -c '

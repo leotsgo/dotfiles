@@ -1,0 +1,8 @@
+[Unit]
+Description=Update the OpenMausBot desktop AppImage
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=%h/scripts/openmausbot-update

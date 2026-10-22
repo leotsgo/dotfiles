@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+# Install / update the OpenMausBot desktop AppImage (Arch has no package and
+# the app never self-updates — upstream docs/linux-desktop.md).
+# Fetches the latest GitHub release only when its tag changed, verifies the
+# asset's sha256 from the release API, swaps it in atomically (a running app
+# keeps the old inode) and refreshes the launcher icon.
+# Run by systemd/openmausbot-update.timer; safe to run by hand.
+set -euo pipefail
+
+dir="$HOME/.local/opt/openmausbot"
+app="$dir/OpenMausBot.AppImage"
+icons="$HOME/.local/share/icons/hicolor"
+mkdir -p "$dir"
+
+rel="$(curl -fsSL https://api.github.com/repos/milind-soni/OpenMausBot/releases/latest)"
+tag="$(jq -r .tag_name <<<"$rel")"
+[[ -f "$app" && "$(cat "$dir/VERSION" 2>/dev/null)" == "$tag" ]] && { echo "openmausbot $tag up to date"; exit 0; }
+
+url="$(jq -r '.assets[] | select(.name == "OpenMausBot.AppImage") | .browser_download_url' <<<"$rel")"
+sha="$(jq -r '.assets[] | select(.name == "OpenMausBot.AppImage") | .digest' <<<"$rel")"
+sha="${sha#sha256:}"
+[[ -n "$url" && "$sha" =~ ^[0-9a-f]{64}$ ]] || { echo "!! no verifiable AppImage asset in $tag" >&2; exit 1; }
+
+tmp="$(mktemp "$dir/.download.XXXXXX")"
+trap 'rm -rf "$tmp" "$dir/squashfs-root"' EXIT
+echo ">> downloading openmausbot $tag"
+curl -fsSL --retry 3 -o "$tmp" "$url"
+echo "$sha  $tmp" | sha256sum -c --quiet - || { echo "!! sha256 mismatch for $tag" >&2; exit 1; }
+chmod +x "$tmp"
+
+# .DirIcon is the AppImage's own icon (usually a symlink into the tree)
+(cd "$dir" && "$tmp" --appimage-extract .DirIcon >/dev/null \
+  && t="$(readlink squashfs-root/.DirIcon || true)" \
+  && { [[ -z "$t" ]] || "$tmp" --appimage-extract "$t" >/dev/null; } \
+  && case "$(file -bL --mime-type squashfs-root/.DirIcon)" in
+       image/svg+xml) d="$icons/scalable/apps"; ext=svg ;;
+       *)             d="$icons/512x512/apps";  ext=png ;;
+     esac \
+  && mkdir -p "$d" && cp -L squashfs-root/.DirIcon "$d/openmausbot.$ext") || echo "!! icon extract failed (launcher falls back to generic)" >&2
+
+mv -f "$tmp" "$app"
+echo "$tag" >"$dir/VERSION"
+echo ">> openmausbot $tag installed"
+command -v notify-send >/dev/null && notify-send -a OpenMausBot "OpenMausBot updated" "$tag — restart the app to use it" || true

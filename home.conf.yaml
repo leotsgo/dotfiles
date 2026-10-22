@@ -28,6 +28,10 @@
     ~/.XCompose: xcompose/.XCompose
     ~/.config/swappy/config: swappy/config
     ~/.pomodoro/settings: pomodoro/settings
+    ~/.local/share/applications/openmausbot.desktop: applications/openmausbot.desktop
+    ~/.config/systemd/user/openmausbot-update.service: systemd/openmausbot-update.service
+    ~/.config/systemd/user/openmausbot-update.timer: systemd/openmausbot-update.timer
 
 - shell:
     - [git submodule update --init --recursive, Installing submodules]
+    - [systemctl --user daemon-reload && systemctl --user enable --now openmausbot-update.timer, Enabling OpenMausBot updater]

@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=OpenMausBot
+Comment=Agent chat app (local + hephaestus server)
+Exec=/home/leotsgo/.local/opt/openmausbot/OpenMausBot.AppImage %U
+Icon=openmausbot
+Terminal=false
+Categories=Development;
+StartupWMClass=OpenMausBot

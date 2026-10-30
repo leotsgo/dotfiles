@@ -1,0 +1,6 @@
+#!/bin/bash
+# st — study timer: st [duration] (termdown format, e.g. 50m, 1h30m; default 50m)
+
+termdown "${1:-50m}" &&
+  notify-send -u critical "⏱ Fim da sessão" "Registre o tempo no card" &&
+  paplay /usr/share/sounds/freedesktop/stereo/complete.oga

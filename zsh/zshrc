@@ -32,7 +32,7 @@ export INBOX="$NOTES/0 inbox"
 export JOURNAL="$NOTES/3 journal"
 export WORK="$HOME/work"
 source $HOME/.config/.zsh/variables.zsh
-source $HOME/.config/.zsh/z.sh
+[[ -f $HOME/.config/.zsh/z.sh ]] && source $HOME/.config/.zsh/z.sh
 
 # ~~~~~~~~~~~~~~~~ Plugin Manager ~~~~~~~~~~~~
 
@@ -85,7 +85,7 @@ compinit -u
 fpath+=$HOME/.config/.zsh/completions
 eval "$(mise hook-env)"
 source <($(which kubectl) completion zsh)
-source <(devpod completion zsh)
+(( $+commands[devpod] )) && source <(devpod completion zsh)
 
 zstyle ':completion:*' menu select # Enable tab completion menu
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}' '+l:|=* r:|=*' # Enable tab completion based on what's already written
@@ -107,3 +107,4 @@ dirmngr --daemon -q 2>&1 >> /dev/null
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
+source <(yana completion zsh)
